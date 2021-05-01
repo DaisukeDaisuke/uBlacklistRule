@@ -10,7 +10,7 @@ import qualified RIO.Text as T
 
 -- | 全てのホスト対象のURLリストを生成します。
 makeHosts :: [Text]
-makeHosts = nub $ concat [tech, copy, ch, video, game, rumor]
+makeHosts = nub $ concat [tech, copy, ch, video, game, rumor, soft]
 
 -- | 技術系スパムサイト全て。
 tech :: [Text]
@@ -131,6 +131,7 @@ nipponkaigi.net
 proxybot.cc
 proxyfly.org
 wikiarabi.org
+xiangtan.gov.cn
 |]
 
 -- | 5chコピペサイト。
@@ -178,4 +179,13 @@ rumor :: [Text]
 rumor = T.lines $ T.strip [r|
 esuteru.com
 jin115.com
+|]
+
+-- | 迷惑ソフトを配布するサイト
+soft :: [Text]
+soft = T.lines $ T.strip [r|
+www.exefiles.com
+www.filemagic.com
+www.fileviewpro.com
+www.solvusoft.com
 |]
